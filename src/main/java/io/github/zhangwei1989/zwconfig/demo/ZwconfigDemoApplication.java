@@ -1,5 +1,6 @@
 package io.github.zhangwei1989.zwconfig.demo;
 
+import io.github.zhangwei1989.zwconfig.client.annotation.EnableZWConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationRunner;
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @EnableConfigurationProperties({ZWDemoConfig.class})
+@EnableZWConfig
 public class ZwconfigDemoApplication {
 
 	@Value("${zw.a}")
