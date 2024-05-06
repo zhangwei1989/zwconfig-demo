@@ -9,3 +9,8 @@ zw:
 
 server:
     port: 9130
+
+logging:
+    level:
+        root: info
+        cn.kimmking: debug

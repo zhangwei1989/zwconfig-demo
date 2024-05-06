@@ -8,20 +8,34 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @EnableConfigurationProperties({ZWDemoConfig.class})
 @EnableZWConfig
+@RestController
 public class ZwconfigDemoApplication {
 
     @Value("${zw.a}")
     private String a;
+
+    @Value("${zw.b}")
+    private String b;
 
     @Autowired
     private ZWDemoConfig zwDemoConfig;
 
     public static void main(String[] args) {
         SpringApplication.run(ZwconfigDemoApplication.class, args);
+    }
+
+    @GetMapping("/demo")
+    public String hello() {
+        return "kk.a = " + a + "\n"
+                + "kk.b = " + b + "\n"
+                + "demo.a = " + zwDemoConfig.getA() + "\n"
+                + "demo.b = " + zwDemoConfig.getB() + "\n";
     }
 
     @Bean
