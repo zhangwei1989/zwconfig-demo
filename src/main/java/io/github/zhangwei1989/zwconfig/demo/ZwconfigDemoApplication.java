@@ -28,9 +28,9 @@ public class ZwconfigDemoApplication {
 
 	@GetMapping("/demo")
 	public String demo() {
-		return "Value a: " + a
-				+ "Value b: " + b
-				+ "ConfigurationProperties a: " + zwDemoConfig.getA()
+		return "Value a: " + a + "\n"
+				+ "Value b: " + b + "\n"
+				+ "ConfigurationProperties a: " + zwDemoConfig.getA() + "\n"
 				+ "ConfigurationProperties b: " + zwDemoConfig.getB();
 	}
 
