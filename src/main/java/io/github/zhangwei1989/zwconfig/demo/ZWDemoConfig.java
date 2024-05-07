@@ -15,4 +15,6 @@ public class ZWDemoConfig {
 
     String a;
 
+    String b;
+
 }
