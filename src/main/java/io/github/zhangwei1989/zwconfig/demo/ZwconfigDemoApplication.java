@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ZwconfigDemoApplication {
 
-    @Value("${zw.a}")
+    @Value("${zw.a}.${zw.b}")
     private String a;
 
     @Value("${zw.b}")
